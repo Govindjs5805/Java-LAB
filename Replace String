@@ -1,0 +1,16 @@
+import java.util.*;
+import java.io.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+	    System.out.println("Enter the string");
+	    String a=sc.nextLine();
+	    System.out.println("Enter the character to be replaced");
+	    char ch=sc.next().charAt(0);
+	    System.out.println("Enter the new character");
+	    char n=sc.next().charAt(0);
+	    String mod=a.replace(ch,n);
+	      System.out.println("String after replacement:"+mod);
+	}
+	}
