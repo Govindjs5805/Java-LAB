@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int temp;
+		System.out.println("Enter size of array");
+		int n=sc.nextInt();
+		int [] a=new int[n];
+		System.out.println("Enter the array elements");
+		for(int i=0;i<n;i++){
+		    a[i]=sc.nextInt();
+		}
+	     for(int p=1;p<n;p++){
+	         for(int c=0;c<n-p;c++){
+	             if(a[c]>a[c+1]){
+	                 temp=a[c];
+	                 a[c]=a[c+1];
+	                 a[c+1]=temp;
+	             }
+	         }
+	     }
+	     System.out.println("Second largest element is"+a[n-2]);
+	       
+	     
+		}
+	}
