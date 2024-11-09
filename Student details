@@ -1,0 +1,32 @@
+import java.util.*;
+import java.io.*;
+public class Student
+{
+    Scanner sc=new Scanner(System.in);
+    String name;
+    int rollno;
+    int[]marks=new int[5];
+    void read(){
+        System.out.println("Enter the name");
+        name=sc.nextLine();
+        System.out.println("Enter roll number");
+        rollno=sc.nextInt();
+        System.out.println("Enter the marks of five subjects 1.English 2.Maths 3.Chemistry 4.Physics 5.Java");
+        for(int i=0;i<5;i++){
+            marks[i]=sc.nextInt();
+        }
+    }
+    void display(){
+        System.out.println("NAME : "+name);
+        System.out.println("Roll Number : "+rollno);
+        System.out.println("Marks of five subjects");
+        for(int i=0;i<5;i++){
+        System.out.println(marks[i]);
+        }
+    }
+	public static void main(String[] args) {
+		Student s=new Student();
+		s.read();
+		s.display();
+	}
+	}
