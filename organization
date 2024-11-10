@@ -1,0 +1,30 @@
+import java.util.Scanner;
+class Employee{
+
+    void display(String name){
+        System.out.println("This is "+name+" class");
+    }
+    void calcsalary(int salary){
+        System.out.println("Salary of Employee is "+salary);
+    }
+}
+class Engineer extends Employee{
+    
+   
+    void salary1(){
+        super.calcsalary(100000);
+     
+    }
+    void salary2(){
+        super.calcsalary(200000);
+    }
+}
+public class Main{
+    public static void main(String[] args){
+    Engineer obj=new Engineer();
+    obj.display("Employee");
+    obj.salary1();
+    obj.display("Engineer");
+    obj.salary2();
+    }
+}
