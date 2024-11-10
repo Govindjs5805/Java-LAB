@@ -1,0 +1,39 @@
+import java.util.Scanner;
+class Employee{
+   String name;
+   int empno;
+   int phno;
+   Employee(String name,int empno,int phno){
+       this.name=name;
+       this.empno=empno;
+       this.phno=phno;
+   }
+   void display(){
+       System.out.println("Employee Name : "+name);
+       System.out.println("Employee Number : "+empno);
+       System.out.println("Phone Number : "+phno);
+   }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String name;
+		int empno;
+		int phno;
+		Employee []obj=new Employee[5];
+		for(int i=0;i<5;i++){
+		    System.out.print("Enter Employee name ");
+		    name=sc.next();
+		    System.out.print("Enter Employee number ");
+		    empno=sc.nextInt();
+		    System.out.print("Enter phone number ");
+		    phno=sc.nextInt();
+		    obj[i]=new Employee(name,empno,phno);
+		}
+		System.out.println("Employee Details:");
+		for(int i=0;i<5;i++){
+		    obj[i].display();
+		    
+		}
+}}
