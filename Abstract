@@ -1,0 +1,30 @@
+import java.util.Scanner;
+abstract class Shape{
+   abstract void numberOfSides();
+   
+}
+class Rectangle extends Shape{
+    void numberOfSides(){
+        System.out.println("Number of sides of rectangle : 4");
+    }
+}
+class Triangle extends Shape{
+    void numberOfSides(){
+        System.out.println("Number of sides of triangle : 3");
+    }
+}
+class Hexagon extends Shape{
+    void numberOfSides(){
+        System.out.println("Number of sides of hexaggon : 6");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+     Rectangle obj=new Rectangle();
+     Triangle obj1=new Triangle();
+     Hexagon obj2=new Hexagon();
+     obj.numberOfSides();
+     obj1.numberOfSides();
+     obj2.numberOfSides();
+    }
+}
