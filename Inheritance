@@ -1,0 +1,111 @@
+import java.util.Scanner;
+class Employee{
+    String name;
+    int age;
+    String phno;
+    String Address;
+    int salary;
+    Employee(String name,int age,String phno,String Address,int salary){
+        this.name=name;
+        this.age=age;
+        this.phno=phno;
+        this.Address=Address;
+        this.salary=salary;
+    }
+    void printsalary(){
+        System.out.println("Salary of the employee : "+salary);
+    }
+    void display(){
+        System.out.println("Name : "+name);
+        System.out.println("Age : "+age);
+        System.out.println("Phone Number :"+phno);
+        System.out.println("Adress : "+Address);
+        System.out.println("Salary of the employee : "+salary);
+    }
+}
+class Officer extends Employee{
+    String spec;
+    Officer(String name,int age,String phno,String Address,int salary,String spec){
+        super(name,age,phno,Address,salary);
+        this.spec=spec;
+    }
+    void display(){
+        super.display();
+        System.out.println("Specialisation :"+spec);
+    }
+}
+class Manager extends Employee{
+    String dep;
+    Manager(String name,int age,String phno,String Address,int salary,String dep){
+        super(name,age,phno,Address,salary);
+        this.dep=dep;
+    }
+    void display(){
+        super.display();
+        System.out.println("Department :"+dep);
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        Employee []obj=new Employee[5];
+        Officer []obj1=new Officer[5];
+        Manager []obj2=new Manager[5];
+        for(int i=0;i<5;i++){
+            System.out.println("Enter name");
+            String name=sc.next();
+            System.out.println("Enter age");
+            int age=sc.nextInt();
+            System.out.println("Enter phone number");
+            String phno=sc.next();
+            System.out.println("Enter address");
+            String address=sc.next();
+            System.out.println("Enter salary");
+            int salary=sc.nextInt();
+            obj[i]=new Employee(name,age,phno,address,salary);
+        }
+        System.out.println("Employee Details");
+        for(int i=0;i<5;i++){
+            obj[i].display();
+        }
+        for(int i=0;i<5;i++){
+            System.out.println("Enter name");
+            String name=sc.next();
+            System.out.println("Enter age");
+            int age=sc.nextInt();
+            System.out.println("Enter phone number");
+            String phno=sc.next();
+            System.out.println("Enter address");
+            String address=sc.next();
+            System.out.println("Enter salary");
+            int salary=sc.nextInt();
+            System.out.println("Enter specialization");
+            String spec=sc.nextLine();
+            obj1[i]=new Officer(name,age,phno,address,salary,spec);
+        }
+        System.out.println("Officer Details");
+        for(int i=0;i<5;i++){
+            obj1[i].display();
+        }
+        for(int i=0;i<5;i++){
+            System.out.println("Enter name");
+            String name=sc.next();
+            System.out.println("Enter age");
+            int age=sc.nextInt();
+            System.out.println("Enter phone number");
+            String phno=sc.next();
+            System.out.println("Enter address");
+            String address=sc.next();
+            System.out.println("Enter salary");
+            int salary=sc.nextInt();
+            System.out.println("Enter department");
+            String dep=sc.nextLine();
+            
+            obj2[i]=new Manager(name,age,phno,address,salary,dep);
+        }
+        System.out.println("Manager Details");
+        for(int i=0;i<5;i++){
+            obj2[i].display();
+        }
+    }
+}
