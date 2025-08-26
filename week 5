@@ -1,0 +1,56 @@
+import sys
+
+# Mapping of grades to grade points
+grade_points = {
+    "A": 10,
+    "AB": 9,
+    "B": 8,
+    "BC": 7,
+    "C": 6,
+    "CD": 5,
+    "D": 4
+}
+
+students = {}       # RollNo -> Full Name
+grades = {}         # RollNo -> list of grade points
+
+section = None
+
+for line in sys.stdin:
+    line = line.strip()
+    if not line:
+        continue
+    if line == "Courses":
+        section = "courses"
+    elif line == "Students":
+        section = "students"
+    elif line == "Grades":
+        section = "grades"
+    elif line == "EndOfInput":
+        break
+    else:
+        if section == "students":
+            roll, name = line.split("~")
+            students[roll] = name
+            grades[roll] = []   # Initialize empty grade list
+        elif section == "grades":
+            parts = line.split("~")
+            course, sem, year, roll, grade = parts
+            if roll in grades:
+                grades[roll].append(grade_points[grade])
+        # "courses" section lines ignored
+
+# Compute GPA for each student
+result = []
+for roll in sorted(students.keys()):
+    name = students[roll]
+    if grades[roll]:
+        gpa = round(sum(grades[roll]) / len(grades[roll]), 2)
+        gpa_str = "{:.1f}".format(gpa)  # always one decimal place
+    else:
+        gpa_str = "0"
+    result.append(f"{roll}~{name}~{gpa_str}")
+
+# Print result
+for r in result:
+    print(r)
