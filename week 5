@@ -54,3 +54,13 @@ for roll in sorted(students.keys()):
 # Print result
 for r in result:
     print(r)
+
+
+
+u == v^(u | v)
+
+The sets u and v should be disjoint.
+
+27
+
+[13, 32, 32, 41, 40, 38, 50, 48]
